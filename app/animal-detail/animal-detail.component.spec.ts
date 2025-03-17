@@ -5,7 +5,6 @@ import { AnimalDetailComponent } from './animal-detail.component';
 describe('AnimalDetailComponent', () => {
   let component: AnimalDetailComponent;
   let fixture: ComponentFixture<AnimalDetailComponent>;
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AnimalDetailComponent]

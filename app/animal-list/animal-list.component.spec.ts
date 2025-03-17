@@ -11,7 +11,6 @@ describe('AnimalListComponent', () => {
       imports: [AnimalListComponent]
     })
     .compileComponents();
-
     fixture = TestBed.createComponent(AnimalListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

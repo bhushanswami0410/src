@@ -11,7 +11,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { Router, RouterLink } from '@angular/router';
-
 @Component({
   selector: 'app-animal-list',
   imports: [CommonModule,FormsModule, MatButtonModule,

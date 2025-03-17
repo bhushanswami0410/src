@@ -17,7 +17,6 @@ export class AnimalService {
   fetchAnimals(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
-
   // Apply filters and search
   filterAnimals(
     search: string,

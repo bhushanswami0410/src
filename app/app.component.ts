@@ -12,3 +12,4 @@ import { AnimalDetailComponent } from "./animal-detail/animal-detail.component";
 export class AppComponent {
   title = 'assignment';
 }
+

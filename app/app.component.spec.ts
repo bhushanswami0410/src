@@ -14,6 +14,7 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
+  
   it(`should have the 'assignment' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;

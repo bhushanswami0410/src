@@ -31,7 +31,6 @@ export class AnimalDetailComponent implements OnInit {
       .getAnimalById(id)
       .subscribe((animal) => (this.animal = animal));
   }
-
   adoptAnimal(): void {
     this.animalService.adoptAnimal(this.animal.id).subscribe(() => {
       this.notificationservice.show('You have successfully adopted this animal!'); 
