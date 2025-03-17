@@ -34,7 +34,6 @@ export class AnimalDetailComponent implements OnInit {
 
   adoptAnimal(): void {
     this.animalService.adoptAnimal(this.animal.id).subscribe(() => {
-      //alert('You have successfully adopted this animal!');
       this.notificationservice.show('You have successfully adopted this animal!'); 
     });
     this.router.navigate(['/'])
