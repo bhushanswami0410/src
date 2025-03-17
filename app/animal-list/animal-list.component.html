@@ -1,0 +1,62 @@
+<div class="container">
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <mat-form-field appearance="fill">
+        <mat-label>Search by name or breed</mat-label>
+        <input matInput [(ngModel)]="search" (input)="loadAnimals()" />
+      </mat-form-field>
+    </div>
+
+    <!-- Filters Section -->
+    <div class="filters">
+      <div class="filter-section">
+        <label>Gender:</label>
+        <mat-radio-group [(ngModel)]="gender" (change)="loadAnimals()">
+          <mat-radio-button value="All">All</mat-radio-button>
+          <mat-radio-button value="Male">Male</mat-radio-button>
+          <mat-radio-button value="Female">Female</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div class="filter-section">
+        <label>Animal Type:</label>
+        <mat-radio-group [(ngModel)]="type" (change)="loadAnimals()">
+          <mat-radio-button value="All">All</mat-radio-button>
+          <mat-radio-button value="Dog">Dog</mat-radio-button>
+          <mat-radio-button value="Cat">Cat</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+
+    <!-- Animal Grid -->
+    <div class="animal-grid">
+      <mat-grid-list cols="3" rowHeight="300px" gutterSize="20px">
+        <mat-grid-tile *ngFor="let animal of animals">
+          <mat-card class="animal-card">
+            <!-- Animal Image -->
+            <img mat-card-image [src]="animal.image" alt="Animal Image" class="animal-image" />
+
+            <!-- Animal Details -->
+            <mat-card-content>
+              <h3>{{ animal.name }}</h3>
+              <p>{{ animal.breed }} | {{ animal.gender }} | {{ animal.age }} years old</p>
+            </mat-card-content>
+
+            <!-- View Details Button -->
+            <mat-card-actions>
+              <button mat-raised-button color="primary" (click)="viewAnimalDetails(animal.id)">
+                View Details
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+
+    <!-- Pagination Button -->
+    <!-- <div class="pagination">
+      <button mat-raised-button color="accent" (click)="onPageChange(currentPage + 1)" class="next-button">
+        Next
+      </button>
+    </div> -->
+</div>

@@ -1,0 +1,26 @@
+<div *ngIf="animal" class="animal-detail-container">
+    <mat-card class="animal-card">
+      <mat-card-header>
+        <mat-card-title>{{ animal.name }}</mat-card-title>
+      </mat-card-header>
+  
+      <img [src]="animal.image" alt="Animal Image" class="animal-image" />
+      
+      <mat-card-content>
+        <p>{{ animal.details }}</p>
+        <p><strong>Medical Notes:</strong> {{ animal.medicalNotes }}</p>
+        
+        <div *ngIf="animal.additionalImages.length">
+          <h4>Additional Images</h4>
+          <div class="additional-images">
+            <img *ngFor="let img of animal.additionalImages" [src]="img" alt="Additional Image" class="additional-image" />
+          </div>
+        </div>
+      </mat-card-content>
+      
+      <mat-card-actions>
+        <button mat-raised-button color="accent" (click)="adoptAnimal()">Adopt Me!</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  
